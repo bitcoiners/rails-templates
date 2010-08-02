@@ -18,8 +18,12 @@ get "http://github.com/rails/jquery-ujs/raw/master/src/rails.js", "public/javasc
 initializer 'jquery.rb', <<-CODE
 # Switch the javascript_include_tag :defaults to
 # use jQuery instead of the default prototype helpers.
-# Written by: Logan Leger, logan@loganleger.com
-# http://github.com/lleger/Rails-3-jQuery
-
-Rails.application.config.action_view.javascript_expansions[:defaults] = ['http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min', 'rails']
+module ActionView::Helpers::AssetTagHelper
+  remove_const :JAVASCRIPT_DEFAULT_SOURCES
+  JAVASCRIPT_DEFAULT_SOURCES = %w(
+    http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js 
+    rails.js
+  )
+  reset_javascript_include_default
+end
 CODE
