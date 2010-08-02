@@ -30,3 +30,4 @@ doc/app
 config/database.yml
 CODE
 
+run "echo TODO > README"

@@ -1,17 +1,24 @@
 #init git for the app
 apply "http://github.com/slavix/rails-templates/raw/rails3/newgit.rb"
 
-#replace prototype with jquery
-apply "http://github.com/slavix/rails-templates/raw/rails3/jquery.rb"
+if yes?("Do you want to use  jQuery?", true)
+  apply "http://github.com/slavix/rails-templates/raw/rails3/jquery.rb"
+end
 
-#adds rspec
-apply "http://github.com/slavix/rails-templates/raw/rails3/rspec.rb"
+if yes?("Do you want to use RSpec??")
+  apply "http://github.com/slavix/rails-templates/raw/rails3/rspec.rb"
+end
 
-#adds cucumber
-apply "http://github.com/slavix/rails-templates/raw/rails3/cucumber.rb"
+if yes?("Do you want to use cucumber?")
+  apply "http://github.com/slavix/rails-templates/raw/rails3/cucumber.rb"
+end
 
-#adds active_scaffold
-apply "http://github.com/slavix/rails-templates/raw/rails3/active_scaffold.rb"
+if yes?("Do you want to use active_scaffold?")
+  apply "http://github.com/slavix/rails-templates/raw/rails3/active_scaffold.rb"
+end
+
+#generate :controller, "welcome index"
+#route "map.root :controller => 'welcome'"
 
 #commits all to git
 apply "http://github.com/slavix/rails-templates/raw/rails3/git-commit.rb"
