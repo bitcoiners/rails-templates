@@ -2,7 +2,7 @@
 apply "http://github.com/slavix/rails-templates/raw/rails3/newgit.rb"
 
 #replace prototype with jquery
-apply "http://github.com/slavix/rails-templates/raw/rails3/jquery.rb"
+#apply "http://github.com/slavix/rails-templates/raw/rails3/jquery.rb"
 
 
 #adds rspec
