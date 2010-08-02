@@ -30,8 +30,3 @@ doc/app
 config/database.yml
 CODE
 
-run "cp config/database.yml config/database.yml.sample"
-
-git :add => "."
-
-git :commit => "-a -m 'Setting up a new rails app. Copy config/database.yml.sample to config/database.yml and customize.'"
