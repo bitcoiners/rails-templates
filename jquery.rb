@@ -6,7 +6,6 @@
 # http://github.com/lleger/Rails-3-jQuery
 
 # Deleting old prototype drivers
-# Do this first so that you don't delete the new jQuery rails one below
 inside('public/javascripts') do
   run "rm -rf controls.js dragdrop.js effects.js prototype.js rails.js"
 end

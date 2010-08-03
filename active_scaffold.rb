@@ -1,3 +1,6 @@
+# active_scaffold.rb
+# from Slava Mikerin
+
 #adds active_scaffold plugin and dependents as submodules
 plugin 'active_scaffold',   :git => 'git://github.com/vhochstein/active_scaffold.git', :submodule => true
 plugin 'verification',      :git => 'git://github.com/rails/verification.git', :submodule => true
