@@ -1,15 +1,15 @@
-# This template installs the new jQuery drivers, removes
-# the old prototype drivers, and installs an initializer
-# which provides a jquery javscript expansion
-# and overrides the :defaults expansion
-# Written by: Logan Leger, logan@loganleger.com
+# This template installs the jquery as prototype replacement
+# from Logan Leger, logan@loganleger.com
 # http://github.com/lleger/Rails-3-jQuery
+# modified by Slava Mikerin
 
 # Deleting old prototype drivers
 inside('public/javascripts') do
   run "rm -rf controls.js dragdrop.js effects.js prototype.js rails.js"
 end
 
+#download latest jquery 1.4+ 
+get "http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js", "public/javascripts/jquery.js"
 # Downloading latest jQuery drivers
 get "http://github.com/rails/jquery-ujs/raw/master/src/rails.js", "public/javascripts/rails.js"
 
@@ -18,11 +18,9 @@ initializer 'jquery.rb', <<-CODE
 # Switch the javascript_include_tag :defaults to
 # use jQuery instead of the default prototype helpers.
 module ActionView::Helpers::AssetTagHelper
-  remove_const :JAVASCRIPT_DEFAULT_SOURCES
-  JAVASCRIPT_DEFAULT_SOURCES = %w(
-    http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js 
+  @@javascript_expansions[:defaults] =%w(
+    jquery.js 
     rails.js
   )
-  reset_javascript_include_default
 end
 CODE
