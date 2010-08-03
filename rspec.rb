@@ -5,5 +5,5 @@ generate("rspec:install")
 
 
 inject_into_file "config/application.rb", 
-                  "\tg.test_framework :rspec, :fixture => true, :views => false", 
+                  "g.test_framework :rspec, :fixture => true, :views => false\n", 
                   :after => "class Application < Rails::Application\n"
