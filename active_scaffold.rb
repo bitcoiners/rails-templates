@@ -13,7 +13,7 @@ gsub_file 'vendor/plugins/active_scaffold/environment.rb',
 #adds active_scaffold includes
 inject_into_file "app/views/layouts/application.html.erb", 
                   "<%= active_scaffold_includes %>", 
-                  :after => "<%= javascript_include_tag :defaults %>"
+                  :after => "<%= javascript_include_tag :defaults %>\n"
 
 
 
