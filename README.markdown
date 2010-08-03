@@ -15,4 +15,5 @@ Current library
 * sethbc by Seth Chandler
 * google\_app\_engine by David Calavera
 * jquery by Logan Leger, logan@loganleger.com
-* slavix_default by Slavix
+* slavix_default, active_scaffold by Slava Mikerin
+* jquery.rb by Logan Leger, logan@loganleger.com http://github.com/lleger/Rails-3-jQuery

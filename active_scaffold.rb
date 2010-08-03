@@ -1,4 +1,4 @@
-# active_scaffold.rb
+# active_scaffold.rb for rails 3
 # from Slava Mikerin
 
 #adds active_scaffold plugin and dependents as submodules
@@ -17,16 +17,5 @@ gsub_file 'vendor/plugins/active_scaffold/environment.rb',
 inject_into_file "app/views/layouts/application.html.erb", 
                   "<%= active_scaffold_includes %>", 
                   :after => "<%= javascript_include_tag :defaults %>\n"
-
-
-
-=begin
-if yes?("Do you want to generate a foo active_scaffold?")
-  #generate("active_scaffold", "foo bar:string")
-  #rake("db:migrate")
-end
-
-=end
-
 
 
