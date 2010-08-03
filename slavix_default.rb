@@ -12,6 +12,11 @@ if yes?("Do you want to use RSpec?")
   apply "http://github.com/slavix/rails-templates/raw/rails3/rspec.rb"
 end
 
+if yes?("Do you want to use haml?")
+  apply "http://github.com/slavix/rails-templates/raw/rails3/haml.rb"
+end
+
+
 if yes?("Do you want to use Cucumber?")
   apply "http://github.com/slavix/rails-templates/raw/rails3/cucumber.rb"
 end
