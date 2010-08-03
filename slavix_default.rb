@@ -1,6 +1,9 @@
 # slavix_default.rb
 # from Slava Mikerin
 
+#needed to get all the dependencies installed ( rails edge,..)
+run "bundle install"
+
 #init git for the app
 apply "http://github.com/slavix/rails-templates/raw/rails3/newgit.rb"
 
