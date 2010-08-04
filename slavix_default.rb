@@ -5,7 +5,7 @@
 apply "http://github.com/slavix/rails-templates/raw/rails3/newgit.rb"
 
 #needed to get rails edge installed first
-run "bundle install"
+#run "bundle install"
 
 
 run "echo TODO > README"
