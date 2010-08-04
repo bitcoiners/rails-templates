@@ -1,11 +1,26 @@
 # slavix_default.rb
 # from Slava Mikerin
 
-#needed to get all the dependencies installed ( rails edge,..)
-run "bundle install"
-
 #init git for the app
 apply "http://github.com/slavix/rails-templates/raw/rails3/newgit.rb"
+
+#needed to get rails edge installed first
+run "bundle install"
+
+
+run "echo TODO > README"
+run "rm public/index.html"
+
+
+
+#default set of included gems
+gem 'inherited_resources', '1.1.2'
+gem 'formtastic', :git => "http://github.com/justinfrench/formtastic.git", :branch => "rails3"
+#adds Generators for DataMapper, Haml, Factory-girl, Authlogic, Mongomapper, Shoulda, Formtastic and SimpleForm
+gem 'rails3-generators', :group => :development
+#more generators
+gem "nifty-generators", :group => :development
+
 
 if yes?("Do you want to use  jQuery?")
   apply "http://github.com/slavix/rails-templates/raw/rails3/jquery.rb"
@@ -19,6 +34,10 @@ if yes?("Do you want to use haml?")
   apply "http://github.com/slavix/rails-templates/raw/rails3/haml.rb"
 end
 
+if yes?("Do you want to use factory_girl?")
+  apply "http://github.com/slavix/rails-templates/raw/rails3/factory_girl.rb"
+end
+
 
 if yes?("Do you want to use Cucumber?")
   apply "http://github.com/slavix/rails-templates/raw/rails3/cucumber.rb"
@@ -28,8 +47,7 @@ if yes?("Do you want to use active_scaffold?")
   apply "http://github.com/slavix/rails-templates/raw/rails3/active_scaffold.rb"
 end
 
-#generate :controller, "welcome index"
-#route "map.root :controller => 'welcome'"
 
 #commits all to git
-apply "http://github.com/slavix/rails-templates/raw/rails3/git-commit.rb"
+git :add => "."
+git :commit => "-a -m 'Setting up a new rails app.'"
