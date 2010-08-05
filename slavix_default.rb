@@ -4,10 +4,6 @@
 #init git for the app
 apply "http://github.com/slavix/rails-templates/raw/rails3/newgit.rb"
 
-#needed to get rails edge installed first
-#run "bundle install"
-
-
 run "echo TODO > README"
 run "rm public/index.html"
 
@@ -16,8 +12,13 @@ run "rm public/index.html"
 #default set of included gems
 gem 'inherited_resources', '1.1.2'
 
-gem 'formtastic', :git => "http://github.com/justinfrench/formtastic.git", :branch => "rails3"
-generate("formtastic:install")
+if yes?("Do you want to use Formtastic?")
+  gem 'formtastic', :git => "http://github.com/justinfrench/formtastic.git", :branch => "rails3"
+  run "bundle install"
+  generate("formtastic:install")
+end
+
+
 
 #adds Generators for DataMapper, Haml, Factory-girl, Authlogic, Mongomapper, Shoulda, Formtastic and SimpleForm
 gem 'rails3-generators', :group => :development
