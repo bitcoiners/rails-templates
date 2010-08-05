@@ -15,12 +15,16 @@ run "rm public/index.html"
 
 #default set of included gems
 gem 'inherited_resources', '1.1.2'
+
 gem 'formtastic', :git => "http://github.com/justinfrench/formtastic.git", :branch => "rails3"
+generate("formtastic:install")
+
 #adds Generators for DataMapper, Haml, Factory-girl, Authlogic, Mongomapper, Shoulda, Formtastic and SimpleForm
 gem 'rails3-generators', :group => :development
 #more generators
 gem "nifty-generators", :group => :development
 
+apply "http://github.com/slavix/rails-templates/raw/rails3/rack.rb"
 
 if yes?("Do you want to use  jQuery?")
   apply "http://github.com/slavix/rails-templates/raw/rails3/jquery.rb"
