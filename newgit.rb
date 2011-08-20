@@ -25,6 +25,7 @@ db/\\*.sqlite3
 db/schema.rb
 tmp/\\*\\*/\\*
 .DS_Store
+.project
 doc/api
 doc/app
 config/database.yml

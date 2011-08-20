@@ -4,8 +4,8 @@
 
 if yes?("Do you want to use  Rack: google_analytics")
   gem "ambethia-rack-google_analytics", 
-    :lib => "rack/google_analytics", 
-    :source => "http://gems.github.com"
+    :require => "rack/google_analytics", 
+    :add_source => "http://gems.github.com"
   inject_into_file "config.ru", :before => "require" do
     google_id = ask "enter your Google Analitycs UA-XXXXX number" || "UA-0000000-1"
     'use Rack::GoogleAnalytics, :web_property_id => "' + google_id + '"'

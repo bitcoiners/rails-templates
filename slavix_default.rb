@@ -10,14 +10,18 @@ run "rm public/index.html"
 
 
 #default set of included gems
-gem 'inherited_resources', '1.1.2'
+gem 'inherited_resources', '>= 1.1.2'
 
 if yes?("Do you want to use Formtastic?")
   gem 'formtastic', :git => "http://github.com/justinfrench/formtastic.git", :branch => "rails3"
+  gem install jintastic 
   run "bundle install"
   generate("formtastic:install")
 end
 
+if yes?("Do you want to use Devise?")
+  gem 'devise', '>= 1.1.3'
+end
 
 
 #adds Generators for DataMapper, Haml, Factory-girl, Authlogic, Mongomapper, Shoulda, Formtastic and SimpleForm
